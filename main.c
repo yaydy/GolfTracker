@@ -1,28 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
+int players;
+int b;
 
-int main() {
-int * players;
+int main() {  
   
-puts("How many players are playing?");
-scanf("%d", players);
+  puts("How many players are playing?");
+  scanf("%d", &players);
 
-int player[32];
+  int player[32];
 
-for(int i = 0; i < players - 1; i++){
+for(int i = 0; i < players; i++){
   player[i] = 0;
 }
 
-for(int i = 0; i < players - 1; i++){
-  int * b;
-  
-  printf("Put the of score Player %d gained this round/n", i);
-  scanf("%d", b);
+for(;;){
+  for(int i = 0; i < players; i++){  
+    printf("Put the of score Player %d gained this round\n", i + 1);
+    scanf("%d", &b);
 
-  player[i] = player[i] + c;
+    player[i] = player[i] + b;
   
-  printf("Player %d's score is now %d/n", i, player[i]);
-}
-  
-return 0;
+    printf("Player %d's score is now %d\n", i + 1, player[i]);
+    }
+  }
+  return 0;
 }
