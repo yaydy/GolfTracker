@@ -11,9 +11,9 @@ void setPlayerValues();
 int main() {
 int players, holes, b;  
 
-players = getPlayers(0);
+players = getPlayers();
 
-holes = getHoles(0);
+holes = getHoles();
 
 setPlayerValues(players);
 
@@ -22,16 +22,18 @@ scoreTracker(holes, players, b);
 return 0;
 }
 
-int getPlayers(int playerget){
+int getPlayers(){
+  static int playerget;
   puts("How many players are playing?");
-  scanf("%d", playerget);
+  scanf("%d", &playerget);
   return playerget;
 }
 
-int getHoles(int holes){
+int getHoles(){
+  static int holez;
   puts("How many holes are there?");
-  scanf("%d", holes);
-  return holes;
+  scanf("%d", &holez);
+  return holez;
 }
 
 void setPlayerValues(int players){
@@ -44,7 +46,7 @@ void scoreTracker(int holes, int players, int b){
   for(int i = 0; i < holes; i++){
     for(int i = 0; i < players; i++){  
       printf("Put the of score Player %d gained this round\n", i + 1);
-      scanf("%d", b);
+      scanf("%d", &b);
 
       player[i] = player[i] + b;
   
